@@ -1,17 +1,25 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to the Tip Calcualtor!");
+        System.out.println();
+        System.out.println("Enter the bill: ");
+        double bill = sc.nextDouble();
+        System.out.println("Enter the desired tip Percentage: " );
+        int tipPercentage = sc.nextInt();
+        System.out.println("Enter the amount of people that will be splitting the tip.");
+        int people = sc.nextInt();
+        double tip = (int) ((tipPercentage) * bill) / 100 ;
+        double tipPerPerson = (tip/people);
+        double totalBill = bill + tip;
+        double totalPerPerson = totalBill / people;
+        System.out.println("The total tip is $" + tip);
+        System.out.println("The tip per person is $" + tipPerPerson);
+        System.out.println("The total bill including the tip is $" + totalBill);
+        System.out.println("The total per person is $" + totalPerPerson);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+
     }
 }
